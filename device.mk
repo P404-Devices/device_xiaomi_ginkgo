@@ -26,10 +26,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
 
-# Atrace
-PRODUCT_PACKAGES += \
-    android.hardware.atrace@1.0-service
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
