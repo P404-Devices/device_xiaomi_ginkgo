@@ -25,7 +25,8 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-<manifest version="1.0" type="device" target-level="3">
+<manifest version="1.0" type="device" target-level="5">
+    <kernel target-level="5"/>
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -41,15 +42,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>6.0</version>
         <interface>
             <name>IEffectsFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.soundtrigger</name>
-        <transport>hwbinder</transport>
-        <version>2.2</version>
-        <interface>
-            <name>ISoundTriggerHw</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -166,6 +158,15 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
            <instance>slot2</instance>
        </interface>
    </hal>
+   <hal format="hidl">
+        <name>vendor.qti.hardware.radio.atcmdfwd</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAtCmdFwd</name>
+            <instance>AtCmdFwdService</instance>
+        </interface>
+    </hal>
     <!-- radio ims -->
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.ims</name>
@@ -296,7 +297,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl">
         <name>android.hardware.bluetooth.audio</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>2.1</version>
         <interface>
             <name>IBluetoothAudioProvidersFactory</name>
             <instance>default</instance>
@@ -305,7 +306,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl">
         <name>vendor.qti.hardware.bluetooth_audio</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>2.1</version>
         <interface>
             <name>IBluetoothAudioProvidersFactory</name>
             <instance>default</instance>
@@ -407,12 +408,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
-        <name>android.hardware.drm</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.3::ICryptoFactory/wfdhdcp</fqname>
-        <fqname>@1.3::IDrmFactory/wfdhdcp</fqname>
-    </hal>
     <!-- RADIO -->
     <hal format="hidl">
         <name>android.hardware.radio</name>
@@ -500,26 +495,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>IAlarm</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- WIGIG HAL service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.wigig.supptunnel</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISuppTunnelProvider</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- WIGIG network performance tuner service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.wigig.netperftuner</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>INetPerfTuner</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -626,6 +601,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- eMBMS HAL Service -->
+    <hal format="hidl">
+        <name>vendor.qti.hardware.embmssl</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IEmbms</name>
+            <instance>embmsslServer0</instance>
+        </interface>
+    </hal>
     <!-- Infrared -->
     <hal format="hidl">
         <name>android.hardware.ir</name>
@@ -675,6 +660,15 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
         <interface>
             <name>IGoodixFingerprintDaemonExt</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.qspmhal</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IQspmhal</name>
             <instance>default</instance>
         </interface>
     </hal>
