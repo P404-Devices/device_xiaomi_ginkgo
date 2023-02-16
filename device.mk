@@ -280,6 +280,7 @@ PRODUCT_ODM_PROPERTIES += \
 # QTI Components
 TARGET_BOARD_PLATFORM := trinket
 TARGET_COMMON_QTI_COMPONENTS := \
+    adreno \
     av \
     bt \
     display \
