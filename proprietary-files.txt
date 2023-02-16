@@ -1965,19 +1965,6 @@ vendor/lib/libqmi_encdec.so|db45b38dda5ce833029c1870c948dcabe36ad721
 vendor/lib/libqmiservices.so|ed6785cccaa6e01be1af7e7a8c8d696eeb78e05f
 
 # Radio - from LA.UM.9.11.r1-04500-NICOBAR.0
-etc/permissions/privapp-permissions-qti.xml|3eda27003bad39514039190d0d7eb675ba034cb9
-etc/sysconfig/qti_whitelist.xml|36d11f2735fcd9ad3ac5639f3c0bb011941b8335
-product/etc/permissions/telephony_product_privapp-permissions-qti.xml|42f4553b61731e56d253766554d4479519cea3ff
--system_ext/app/DeviceInfo/DeviceInfo.apk|4ff56a7e5abfe2faeb95ae8c967ef4cf72589b07
--system_ext/app/DynamicDDSService/DynamicDDSService.apk|502329cf448eb3b7e2736fcad59e4eacc48f93e6
--system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|a32f88ddcc8f9cba18aa5697ee5bd52201e89b13
--system_ext/app/atfwd/atfwd.apk|1224a0ea61601cf002262aa5f042a68e55e30c3b
--system_ext/app/datastatusnotification/datastatusnotification.apk|2fcf2e570818eb317de45f42c0a674db875b6ee4
--system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|60af440aae61fcd6939af56a0b94d9b9ef5ebd55
-system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml|4f0056403f56928b8c75a617ba582f17061f89ae
-system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
-system_ext/etc/permissions/telephonyservice.xml|b7831598d3c19c6ce4ef431d1cc44d94c3c35a8d
-system_ext/framework/qcrilhook.jar|f2888f922b8347417dfa86741feb8348795fce6f
 vendor/bin/ATFWD-daemon|0646e296cdc04a5fd755d6a5a8fceb2cd9fa48ad
 vendor/bin/adpl|a7ef739a68cffa6269cf215f0c21de11cd33f8fc
 vendor/bin/hw/qcrild|b593e369985cebb4235066363e77f861eb46662f
@@ -2066,33 +2053,7 @@ vendor/radio/qcril_database/upgrade/8_version_update_ecc_table.sql|a0603a5c46e8e
 vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql|4701219a79190995eda651e5c45e11c9b111a478
 vendor/radio/qcril_database/upgrade/10_version_update_ecc_table.sql|1ca05b047116cbc776f71d3bdba4952b18b04229
 
-# Radio - EMBMS - from LA.UM.9.11.r1-04500-NICOBAR.0
--system_ext/app/embms/embms.apk|010db3d97f4faad191f1a53415d7cf0a94dabcd1
-system_ext/etc/permissions/embms.xml|22e7474091f9f71f02dd0cfc76cfa8848a46f079
-system_ext/framework/embmslibrary.jar|b5fe26c1cea597af8a1751332d187f2f574816c1
-system_ext/lib64/libembmsmmosal.so|419b6ab7b400e927df163cf2dc1cb341a42b9150
-system_ext/lib64/libembmsmmparser_lite.so|a8d64ba654940237e17c1473c37bfa2266b6a77b
-system_ext/lib64/libembmssqlite.so|e106b2d4a07ee75a273782191186b19bc25587c7
-system_ext/lib64/libembmstinyxml.so|54af1f8fbcd85534a5c059d6a2f6a7065bc1103a
-
 # Radio - IMS - from LA.UM.9.11.r1-04500-NICOBAR.0
--system_ext/app/imssettings/imssettings.apk|8b47c43d56228dcce93cc8c07c6ceb08cb3d2fe5
-system_ext/lib64/lib-imsvideocodec.so|0d471753164aa8c5b038790a64b8d940820308a9
-system_ext/lib64/lib-imsvt.so|f795cc87119b49587dbb1f3e4349fcf67b0610ed
-system_ext/lib64/lib-imsvtextutils.so|50a092eb7b490f4307bddb3d5a4c595b458bc503
-system_ext/lib64/lib-imsvtutils.so|594714eb04346ca3e864b022251f866f85f0393d
-system_ext/lib64/libimscamera_jni.so|6603d61ed42fa813d54bc86f33eee3dbb273fefa
-system_ext/lib64/libimsmedia_jni.so|180b680b06a4567cf5485d69eac5dd5b4528b50c
-system_ext/lib64/vendor.qti.ims.callcapability@1.0.so|82f59111f25f783e16ecaa0155f917494909f1f2
-system_ext/lib64/vendor.qti.ims.callinfo@1.0.so|485d4c1a17f164bdb9f1f7a127625b46fc015341
-system_ext/lib64/vendor.qti.ims.factory@1.0.so|4b09cbb8e07b67494de68d0f2ed69e82183714b3
-system_ext/lib64/vendor.qti.ims.factory@1.1.so|89139949ee99304b5b897b5432190697ac12c138
-system_ext/lib64/vendor.qti.ims.rcsconfig@1.0.so|905ab5d5b9bbfde8b3ca58ea33942b05bb2da90a
-system_ext/lib64/vendor.qti.ims.rcsconfig@1.1.so|dedbd21f8e2f30f59504f94bc7bd3c09340cc2ef
-system_ext/lib64/vendor.qti.ims.rcsconfig@2.0.so|9a71423516a63df6d92c0f46cd3b576d55ed1746
-system_ext/lib64/vendor.qti.ims.rcsconfig@2.1.so|5400fb884ea64b61d0720e0a40b09ce31f47bd33
-system_ext/lib64/vendor.qti.imsrtpservice@3.0.so|34da5e45ae4817ccff75c6b8d1d0c125ebd253ed
--system_ext/priv-app/ims/ims.apk|ed68ecd630ddbd49e88bd0b2e3b50ee35c334ef0
 -vendor/app/IWlanService/IWlanService.apk|08472592f4a21ad806c487fc0c70c10bbe7c7ac2
 vendor/bin/ims_rtp_daemon|7a37ba220953edf951d4aa4cba761289e7644bf6
 vendor/bin/imsdatadaemon|d84d92b26b0084772a0ff6d5e65abf0c90ce6ef2

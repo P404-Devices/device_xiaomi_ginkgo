@@ -136,9 +136,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
-# RIL
-ENABLE_VENDOR_RIL_SERVICE := true
-
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
