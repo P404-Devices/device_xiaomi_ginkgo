@@ -79,11 +79,6 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/fs/config.fs
 BOARD_HAVE_QCOM_FM := true
 BOARD_HAS_QCA_FM_SOC := "cherokee"
 
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
-GNSS_HIDL_VERSION := 2.1
-LOC_HIDL_VERSION := 4.0
-
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
