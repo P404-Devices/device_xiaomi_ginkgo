@@ -181,7 +181,6 @@ vendor/lib/libsymphony-cpu.so
 vendor/lib/libsymphonypower.so
 vendor/lib/libVDClearShot.so
 vendor/lib/libVDSuperPhotoAPI.so
-vendor/lib/libvideoutils.so
 vendor/lib/libvidhance.so
 vendor/lib/libxiaomiAI_sensor.so
 vendor/lib/mibokeh_660_opencl.bin
@@ -1740,8 +1739,6 @@ vendor/lib/hw/sound_trigger.primary.trinket.so
 vendor/lib64/hw/sound_trigger.primary.trinket.so
 
 # Media - from LA.UM.9.11.r1-04500-NICOBAR.0
--vendor/lib/libMpeg4SwEncoder.so|92698c2830156bbca6297ad599d9e0f916139f00
--vendor/lib64/libMpeg4SwEncoder.so|46cca30c76db78d8c5d6b99c2c7e5a00c414bc4f
 vendor/lib/libAlacSwDec.so|1d074a0415ee358cd13c981e35266cff4c6863ce
 vendor/lib/libApeSwDec.so|ce425ef9372ed6635e313422b3578f77b90ff526
 vendor/lib/libFlacSwDec.so|01c7a51d93c2fe447e23c1210832b39b171393e3
