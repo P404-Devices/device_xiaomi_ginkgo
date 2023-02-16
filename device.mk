@@ -150,6 +150,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
     $(LOCAL_PATH)/configs/perf/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
+# Inherit properties.mk
+$(call inherit-product, $(LOCAL_PATH)/properties.mk)
+
 # QTI VNDK Framework Detect
 PRODUCT_ODM_PROPERTIES += \
     ro.vendor.qti.va_odm.support=1
