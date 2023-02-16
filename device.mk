@@ -8,16 +8,6 @@
 # Vendor blobs
 $(call inherit-product, vendor/xiaomi/ginkgo/ginkgo-vendor.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
-PRODUCT_PACKAGES += \
-    GinkgoMiuiCamera \
-    NoCutoutOverlay \
-    NotchBarKiller \
-    WillowFrameworkRes
-
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -138,6 +128,18 @@ PRODUCT_PACKAGES += \
 # NFC
 TARGET_NFC_SKU := willow
 
+# Overlays
+PRODUCT_PACKAGES += \
+    P404GinkgoFrameworks \
+    P404GinkgoSettings \
+    GinkgoFrameworks \
+    GinkgoSettingsLib \
+    GinkgoSystemUI \
+    GinkgoMiuiCamera \
+    GinkgoNoCutoutOverlay  \
+    NotchBarKiller \
+    WillowFrameworkRes
+
 # Parts
 PRODUCT_PACKAGES += \
     XiaomiParts
@@ -169,6 +171,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     init \
     media-legacy \
     nq-nfc \
+    overlay \
     perf \
     telephony \
     usb \
