@@ -282,7 +282,8 @@ TARGET_BOARD_PLATFORM := trinket
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
-    display
+    display \
+    wfd
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -410,16 +411,3 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
-
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor \
-    libnl \
-    libqdMetaData \
-    libqdMetaData.system \
-    libqdMetaData.vendor \
-    libwfdaac_vendor \
-    vendor.display.config@2.0
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
