@@ -283,7 +283,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
     display \
-    wfd
+    wfd \
+    wlan
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -384,30 +385,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/input/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # Wifi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
-    hostapd \
-    libwifi-hal-ctrl \
-    libwifi-hal-qcom \
-    libwpa_client \
-    TetheringConfigOverlay \
-    WifiOverlay \
-    wpa_cli \
-    wpa_supplicant \
-    wpa_supplicant.conf \
-    vendor.qti.hardware.wifi.hostapd@1.1.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.0.vendor
-
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
-    $(LOCAL_PATH)/configs/wifi/hostapd.deny:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.deny \
-    $(LOCAL_PATH)/configs/wifi/hostapd_default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd_default.conf \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
