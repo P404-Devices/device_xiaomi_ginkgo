@@ -305,6 +305,7 @@ PRODUCT_ODM_PROPERTIES += \
 
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
+    av \
     bt
 
 # Ramdisk
@@ -436,7 +437,6 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libavservices_minijail \
     libavservices_minijail.vendor \
     libnl \
     libqdMetaData \
