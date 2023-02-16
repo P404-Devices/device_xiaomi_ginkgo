@@ -66,9 +66,6 @@ TARGET_ENABLE_MEDIADRM_64 := true
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/fs/config.fs
-
 # FM
 BOARD_HAVE_QCOM_FM := true
 BOARD_HAS_QCA_FM_SOC := "cherokee"
