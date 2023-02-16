@@ -25,3 +25,6 @@ gf.debug.dump_data          u:object_r:vendor_fingerprint_prop:s0
 
 # Wifi Display 
 persist.vendor.setWFDInfo.  u:object_r:vendor_wfd_sys_debug_prop:s0
+
+# Wlan
+wifi.interface			    u:object_r:wifi_hal_prop:s0
