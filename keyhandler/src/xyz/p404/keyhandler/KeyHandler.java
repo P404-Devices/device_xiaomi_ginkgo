@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package me.waveproject.keyhandler;
+package xyz.p404.keyhandler;
 
 import android.app.ActivityManager;
 import android.content.Context;
