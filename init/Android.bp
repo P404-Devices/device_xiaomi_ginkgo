@@ -26,11 +26,6 @@ cc_library_static {
 }
 
 prebuilt_etc {
-    name: "fstab.qcom",
-    src: "fstab.qcom",
-    vendor: true,
-}
-prebuilt_etc {
     name: "init.ginkgo.rc",
     src: "init.ginkgo.rc",
     sub_dir: "init",

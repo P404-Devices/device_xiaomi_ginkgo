@@ -172,6 +172,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    fstab.qcom_ramdisk \
     init.ginkgo.rc \
     init.qcom.usb.rc \
     init.target.rc \
