@@ -26,4 +26,6 @@
     <!-- Whether to show color balance controls in display settings -->
     <bool name="config_show_color_balance_controls">false</bool>
 
+    <!-- Show battery cycle count -->
+    <bool name="config_show_battery_cycle_count" translatable="false">true</bool>
 </resources>
