@@ -8,10 +8,6 @@
 # Inherit from the proprietary version
 $(call inherit-product, vendor/xiaomi/ginkgo/ginkgo-vendor.mk)
 
-# ANT+
-PRODUCT_PACKAGES += \
-    com.dsi.ant@1.0.vendor
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -31,19 +27,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.1.vendor \
-    audio.bluetooth.default \
     libbluetooth_audio_session
 
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio@2.1-impl \
-    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
-
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false \
     persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     persist.vendor.qcom.bluetooth.scram.enabled=true \
@@ -182,15 +168,13 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # Init
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.ginkgo.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.ginkgo.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/init.qcom.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.usb.sh \
-    $(LOCAL_PATH)/rootdir/bin/init.qti.dcvs.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.dcvs.sh
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.ginkgo.rc \
+    init.qcom.usb.rc \
+    init.target.rc \
+    init.qcom.usb.sh \
+    init.qti.dcvs.sh
 
 # Input
 PRODUCT_COPY_FILES += \
