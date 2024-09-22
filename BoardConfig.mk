@@ -7,7 +7,6 @@
 
 BOARD_VENDOR := xiaomi
 DEVICE_PATH := device/xiaomi/ginkgo
-COMMON_PATH := device/qcom/common
 
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
@@ -51,7 +50,6 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
-DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/device_framework_compatibility_matrix.xml
 
 ODM_MANIFEST_SKUS += willow
@@ -75,7 +73,7 @@ BOARD_KERNEL_CMDLINE += kpti=off
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_APPEND_DTB := true
 KERNEL_SD_LLVM_SUPPORT := true
-TARGET_KERNEL_SOURCE := kernel/xiaomi/ginkgo
+TARGET_KERNEL_SOURCE := kernel/msm-4.14
 TARGET_KERNEL_CONFIG := vendor/ginkgo-perf_defconfig
 
 # Lights
@@ -101,7 +99,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Releasetools

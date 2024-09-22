@@ -47,7 +47,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.device.class_of_device=90,2,12
 
 # Camera
-$(call inherit-product, vendor/miuicamera/config.mk)
+# $(call inherit-product, vendor/miuicamera/config.mk)
 
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
@@ -110,8 +110,10 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     disable_configstore
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.sf.color_saturation=1.1
+
 PRODUCT_VENDOR_PROPERTIES += \
-     persist.sys.sf.color_saturation=1.1 \
      debug.sf.disable_backpressure=1 \
      debug.sf.enable_hwc_vds=1 \
      debug.sf.latch_unsignaled=1 \
@@ -174,9 +176,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     fstab.qcom_ramdisk \
     init.ginkgo.rc \
-    init.qcom.usb.rc \
     init.target.rc \
-    init.qcom.usb.sh \
     init.qti.dcvs.sh
 
 # Input
@@ -353,8 +353,8 @@ PRODUCT_PACKAGES += \
     libwfdaac \
     libwfdaac_vendor \
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+# PRODUCT_BOOT_JARS += \
+#     WfdCommon
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.debug.wfd.enable=1
