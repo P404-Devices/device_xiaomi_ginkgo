@@ -103,6 +103,14 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.charger.enable_suspend=true
 
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor \
+    libyuv
+
+#servicetracker AIDL
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetrackeraidl-impl
+    
 # Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi

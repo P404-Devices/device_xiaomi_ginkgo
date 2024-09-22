@@ -69,6 +69,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 loop.max_part=7 cgroup.memory=nokmem,nosocket
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += kpti=off
+BOARD_BOOTCONFIG += androidboot.selinux=permissive
 
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_APPEND_DTB := true
