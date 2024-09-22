@@ -24,3 +24,40 @@ cc_library_static {
     ],
     shared_libs: ["libbase"]
 }
+
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "fstab.qcom",
+    vendor: true,
+}
+prebuilt_etc {
+    name: "init.ginkgo.rc",
+    src: "init.ginkgo.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+prebuilt_etc {
+    name: "init.target.rc",
+    src: "init.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.usb.rc",
+    src: "init.qcom.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.dcvs.sh",
+    src: "init.qti.dcvs.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.usb.sh",
+    src: "init.qcom.usb.sh",
+    vendor: true,
+}
