@@ -19,7 +19,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
     vendor.audio.feature.compr_voip.enable=true \
-    vendor.audio.feature.spkr_prot.enable=false
+    vendor.audio.feature.spkr_prot.enable=false \
+    vendor.audio.offload.buffer.size.kb=256
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.config.vc_call_vol_default=5 \
@@ -97,42 +98,29 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.vidhance.video.enabled=1
 
 PRODUCT_SYSTEM_PROPERTIES += \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
+    persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera
 
-# Charger
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.charger.enable_suspend=true
-
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.capabilityconfigstore@1.0.vendor \
-    libyuv
-
-#servicetracker AIDL
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetrackeraidl-impl
-    
 # Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-PRODUCT_PACKAGES += \
-    disable_configstore
 
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.sf.color_saturation=1.1
 
 PRODUCT_VENDOR_PROPERTIES += \
-     debug.sf.disable_backpressure=1 \
-     debug.sf.enable_hwc_vds=1 \
-     debug.sf.latch_unsignaled=1 \
-     ro.vendor.display.sensortype=2 \
-     ro.vendor.display.svi=1 \
-     vendor.display.svi.config=1 \
-     vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
+    debug.sf.disable_backpressure=1 \
+    debug.sf.enable_hwc_vds=1 \
+    debug.sf.latch_unsignaled=1 \
+    ro.config.avoid_gfx_accel=true \
+    ro.vendor.display.sensortype=2 \
+    ro.vendor.display.svi=1 \
+    vendor.display.svi.config=1 \
+    vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
 
 PRODUCT_SYSTEM_PROPERTIES += \
-     persist.lcd.cabc_mode=1 \
-     persist.lcd.hbm_mode=0
+    persist.lcd.cabc_mode=1 \
+    persist.lcd.hbm_mode=0
 
 PRODUCT_ODM_PROPERTIES += \
     ro.surface_flinger.use_color_management=1
@@ -142,7 +130,7 @@ PRODUCT_PACKAGES += \
     ParanoidDoze
 
 PRODUCT_SYSTEM_PROPERTIES += \
-    ro.sensor.proximity=true
+    ro.sensor.proximity=true \
     ro.sensor.pickup=xiaomi.sensor.pickup
 
 # DPM
@@ -171,8 +159,9 @@ BOARD_HAVE_QCOM_FM := true
 PRODUCT_VENDOR_PROPERTIES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# GPS
-LOC_HIDL_VERSION := 4.0
+# FUSE passthrough
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.fuse.passthrough.enable=true
 
 # Health
 PRODUCT_PACKAGES += \
@@ -224,10 +213,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.netflix.bsp_rev=Q6125-17995-1
 
-# Netmgr
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor
-
 # Neural networks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
@@ -249,11 +234,6 @@ PRODUCT_PACKAGES += \
     GinkgoNoCutoutOverlay  \
     NotchBarKiller
 
-# PASR
-PRODUCT_VENDOR_PROPERTIES += \
-    vendor.power.pasr.enabled=true \
-    vendor.pasr.activemode.enabled=true
-
 # Perf
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
@@ -265,30 +245,9 @@ TARGET_BOARD_PLATFORM := trinket
 TRINKET := trinket
 
 # QTI Components
-TARGET_COMMON_QTI_COMPONENTS := \
-    adreno \
-    audio \
-    av \
-    bt \
-    display \
-    gps \
-    init \
-    media-legacy \
-    nq-nfc \
-    overlay \
-    perf \
-    telephony \
-    usb \
-    vibrator \
-    wlan
+TARGET_COMMON_QTI_COMPONENTS := all
 
 # RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor
-
 PRODUCT_VENDOR_PROPERTIES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
@@ -300,14 +259,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.manual_nw_rej_ct=1 \
     persist.vendor.radio.mt_sms_ack=30 \
     persist.vendor.radio.process_sups_ind=1 \
-    persist.vendor.radio.redir_party_num=1 \
     persist.vendor.radio.report_codec=1 \
     persist.vendor.ssr.restart_level=ALL_ENABLE \
     ro.telephony.default_network=22,22
 
 # SoC
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.soc.manufacturer=QTI \
     ro.soc.model=SM6125
 
 # Sensors
@@ -330,6 +287,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.sensors.enable.rt_task=false \
     persist.vendor.sensors.support_direct_channel=false
 
+# Shipping API
+PRODUCT_SHIPPING_API_LEVEL := 28
+
 # Soong namespace
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
@@ -345,31 +305,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal/thermal-engine-map.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map.conf \
     $(LOCAL_PATH)/configs/thermal/thermal-engine-normal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal.conf
 
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhidlbase-v32.so
+
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.data.iwlan.enable=true
+    persist.vendor.data.iwlan.enable=true \
     ro.telephony.iwlan_operation_mode=legacy
-
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libavservices_minijail \
-    libavservices_minijail.vendor \
-    libnl \
-    libwfdaac \
-    libwfdaac_vendor \
-
-# PRODUCT_BOOT_JARS += \
-#     WfdCommon
-
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.debug.wfd.enable=1
-    persist.sys.wfd.virtual=0
-
-# ZRAM
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.zram.mark_idle_delay_mins=60 \
-    ro.zram.first_wb_delay_mins=1440 \
-    ro.zram.periodic_wb_delay_hours=24
