@@ -125,9 +125,9 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_ODM_PROPERTIES += \
     ro.surface_flinger.use_color_management=1
 
-# Doze
-PRODUCT_PACKAGES += \
-    ParanoidDoze
+# # Doze
+# PRODUCT_PACKAGES += \
+#     ParanoidDoze
 
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.sensor.proximity=true \
