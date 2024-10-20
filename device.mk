@@ -159,7 +159,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.ginkgo
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -302,7 +302,8 @@ PRODUCT_SHIPPING_API_LEVEL := 28
 
 # Soong namespace
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/xiaomi
 
 # Time
 PRODUCT_SYSTEM_PROPERTIES += \
