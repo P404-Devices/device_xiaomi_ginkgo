@@ -44,9 +44,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=14 \
     persist.bluetooth.bqr.min_interval_ms=500
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.device.class_of_device=90,2,12
-
 # Camera
 # $(call inherit-product, vendor/miuicamera/config.mk)
 
@@ -55,7 +52,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     android.hidl.memory.block@1.0.vendor \
-    vendor.qti.hardware.camera.device@1.0.vendor
+    libpiex_shim \
+    vendor.qti.hardware.camera.device@1.0.vendor \
+    android.frameworks.sensorservice@1.0.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -101,9 +100,16 @@ PRODUCT_SYSTEM_PROPERTIES += \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera
 
+# Configstore
+PRODUCT_PACKAGES += \
+    disable_configstore \
+    libcrypto-v33 \
+    libstagefright_softomx_plugin.vendor
+    
 # Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+TARGET_USE_AIDL_QTI_MEMTRACK := true
 
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.sf.color_saturation=1.1
@@ -125,9 +131,9 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_ODM_PROPERTIES += \
     ro.surface_flinger.use_color_management=1
 
-# # Doze
-# PRODUCT_PACKAGES += \
-#     ParanoidDoze
+# Doze
+PRODUCT_PACKAGES += \
+    ParanoidDoze
 
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.sensor.proximity=true \
@@ -145,6 +151,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     drm.service.enabled=true
+
+# GNSS
+PRODUCT_PACKAGES += \
+    libjsoncpp.vendor \
+    libsqlite.vendor
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -165,9 +176,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.fuse.passthrough.enable=true
 
 # Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl-qti \
-    android.hardware.health@2.1-service
+TARGET_USE_HIDL_QTI_HEALTH := true
 
 # Init
 PRODUCT_PACKAGES += \
@@ -318,3 +327,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.data.iwlan.enable=true \
     ro.telephony.iwlan_operation_mode=legacy
+
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libpng.vendor

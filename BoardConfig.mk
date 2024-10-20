@@ -34,6 +34,7 @@ TARGET_OTA_ASSERT_DEVICE := ginkgo,willow
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := trinket
 TARGET_NO_BOOTLOADER := true
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
 # Camera
 TARGET_NEEDS_RAW10_BUFFER_FIX := true
@@ -49,10 +50,13 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
+DEVICE_MATRIX_FILE += \
+    device/qcom/vendor-common/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/device_framework_compatibility_matrix.xml
 
 ODM_MANIFEST_SKUS += willow
 ODM_MANIFEST_WILLOW_FILES := $(DEVICE_PATH)/configs/hidl/manifest_willow.xml
+
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_ginkgo
